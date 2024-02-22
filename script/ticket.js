@@ -67,7 +67,6 @@ for (const seat of singleSeat) {
 }
 
 const couponApply = document.getElementById('coupon-apply');
-// const applyBtn = document.getElementById('apply-btn');
 
 applyBtn.addEventListener('click', function () {
     const new15 = getInputTextById('new15');
@@ -107,12 +106,11 @@ function validatePhoneAndProceed() {
         phoneError.textContent = "";
     }
 
-    // Proceed to the next step
+    // Next
     next();
 }
 
 function next() {
-    // Add your logic for the next step here
     console.log('Proceeding to the next step...');
     my_modal_1.showModal();
 }
