@@ -12,7 +12,6 @@ const selectedSeats = new Set();
 for (const seat of singleSeat) {
     seat.addEventListener('click', function () {
         if (!selectedSeats.has(seat)) {
-            // Seat is not selected, proceed with selection
             if (seatSelect < 4) {
                 seat.classList.add('bg-[#1DD100]');
                 seat.classList.remove('bg-[#F7F8F8]');
@@ -20,7 +19,6 @@ for (const seat of singleSeat) {
                 seatSelect = seatSelect + 1;
                 setTextElementValueById('booked-seat', seatSelect);
 
-                // Add the seat to the selectedSeats set
                 selectedSeats.add(seat);
 
                 const seatsLeft = getTextElementValueById('seats-left');
@@ -55,7 +53,6 @@ for (const seat of singleSeat) {
                 nextBtn.removeAttribute('disabled');
                 nextBtn.style.backgroundColor = '#1DD100';
 
-                // Enable the next button and change its color
                 nextBtn.removeAttribute('disabled');
                 nextBtn.style.backgroundColor = '#1DD100';
 
@@ -102,43 +99,34 @@ applyBtn.addEventListener('click', function () {
 function validatePhoneAndProceed() {
     const phoneInput = document.getElementById('phoneInput');
 
-    // Remove any existing error messages
     removeErrorMessage();
 
-    // Validate if at least one seat is selected
     if (!isSelected) {
         alert("Please select at least one seat.");
         return;
     }
 
-    // Validate if the phone number is not empty
     if (phoneInput.value.trim() === "") {
         displayErrorMessage("Phone number must be provided.");
-    } 
+    }
     else {
-        // Enable the next button and change its color
         nextBtn.removeAttribute('disabled');
         nextBtn.style.backgroundColor = '#1DD100';
 
-        // Next
         next();
     }
 }
 
 function displayErrorMessage(message) {
-    // Create a new div for displaying the error message
     const errorMessageDiv = document.createElement('div');
     errorMessageDiv.textContent = message;
     errorMessageDiv.style.color = 'red';
-    errorMessageDiv.classList.add('error-message'); // Add a class for styling
-
-    // Append the error message div next to the phoneInput element
+    errorMessageDiv.classList.add('error-message');
     const phoneInput = document.getElementById('phoneInput');
     phoneInput.parentNode.insertBefore(errorMessageDiv, phoneInput.nextSibling);
 }
 
 function removeErrorMessage() {
-    // Remove any existing error message divs
     const existingErrorMessages = document.querySelectorAll('.error-message');
     existingErrorMessages.forEach(message => message.remove());
 }
@@ -148,24 +136,17 @@ function next() {
     my_modal_1.showModal();
 }
 
-// Assuming you have a dialog element with id 'my_modal_1'
 const myModal = document.getElementById('my_modal_1');
 
-// Add an event listener to the form inside the dialog
-myModal.querySelector('form').addEventListener('submit', function(event) {
-  event.preventDefault();  // Prevent the default form submission behavior
+myModal.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-  // Your logic for continuing the process without page refresh
 
-  // Close the modal
-  my_modal_1.close();
+    my_modal_1.close();
 
-  // Reload the page
-  window.location.reload();
+    window.location.reload();
 });
 
-// Assuming you have a button inside the form with class 'btn'
-myModal.querySelector('form .btn').addEventListener('click', function() {
-  // Programmatically submit the form when the button is clicked
-  myModal.querySelector('form').submit();
+myModal.querySelector('form .btn').addEventListener('click', function () {
+    myModal.querySelector('form').submit();
 });
