@@ -142,7 +142,7 @@
                 </div>
             </div>
             <button
-                class="btn bg-white text-[#1DD100] font-raleway text-center mt-16 lg:mt-38 lg:text-xl border-2 border-[#1DD100] rounded-lg ml-[70px] lg:ml-[680px]">See
+                class="btn bg-white text-[#1DD100] font-raleway text-center mt-16 lg:mt-38 lg:text-xl border-2 border-[#1DD100] rounded-lg ml-[70px] lg:ml-[530px]">See
                 All Offers</button>
         </section>
 
@@ -407,7 +407,7 @@
                                 <span class="label-text font-inter text-[#030712] font-bold text-base">Phone
                                     Number*</span>
                             </div>
-                            <input type="text" placeholder="Enter your phone number" id="phoneInput"
+                            <input type="number" placeholder="Enter your phone number" id="phoneInput"
                                 class="input input-bordered text-[#03071266] font-inter" required />
                             <span id="phoneError" class="text-red-500"></span>
                         </label>
@@ -416,12 +416,12 @@
                             <div class="label">
                                 <span class="label-text font-inter text-[#030712] font-bold text-base">Email ID</span>
                             </div>
-                            <input type="text" placeholder="Enter your email id"
+                            <input type="email" placeholder="Enter your email id"
                                 class="input input-bordered text-[#03071266] font-inter" />
                         </label>
 
-                        <button onclick="validatePhoneAndProceed()" id="next"
-                            class="btn bg-[#1DD100] mb-5 mt-4 w-[533px] text-white font-raleway font-bold lg:text-xl border-0 lg:px-8 rounded-xl">Next</button>
+                        <button onclick="validatePhoneAndProceed()" id="next-btn"
+                            class="btn mb-5 mt-4 w-[533px] text-white font-raleway font-bold lg:text-xl border-0 lg:px-8 rounded-xl">Next</button>
 
                         <!-- Success modal -->
                         <dialog id="my_modal_1" class="modal">
@@ -464,10 +464,10 @@
 
         </section>
     </main>
-    <footer class="footer items-center px-60 bg-black text-neutral-content h-[457px]">
+    <footer class="footer items-center p-7 bg-black text-neutral-content h-[457px]">
         <div class="">
             <div class="flex justify-between">
-                <aside class="ml-16 mb-10">
+                <aside class="ml-28 mb-10">
                     <h1 class="font-raleway text-4xl font-bold">P-Ticket</h1>
                     <p class="mt-2 font-inter text-[16px] text-gray-400">P-Ticket is a digital platform to make your
                         <br>online
@@ -486,9 +486,9 @@
                     </div>
                 </nav>
             </div>
-            <hr class="border-dashed w-full ml-16">
+            <hr class="border-dashed w-full ml-14">
 
-            <div class="flex justify-between w-full ml-16 mt-6">
+            <div class="flex justify-between w-full ml-14 mt-6">
                 <div>
                     <p class="text-gray-400">@all rights reserved, P-Ticket services limited.2024</p>
                 </div>
