@@ -16,6 +16,7 @@ for (const seat of singleSeat) {
             if (seatSelect < 4) {
                 seat.classList.add('bg-[#1DD100]');
                 seat.classList.remove('bg-[#F7F8F8]');
+                seat.style.color = 'white';
                 seatSelect = seatSelect + 1;
                 setTextElementValueById('booked-seat', seatSelect);
 
